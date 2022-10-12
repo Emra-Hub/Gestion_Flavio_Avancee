@@ -1,10 +1,27 @@
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Suppression Ville</title>
 </head>
 <body>
-$END$
+<table border="1">
+    <th>ID</th>
+    <th>NOM</th>
+    <th>LATITUDE</th>
+    <th>LONGITUDE</th>
+    <th>PAYS</th>
+    <tr>
+        <td th:text="${supVille.idville}"/>
+        <td th:text="${supVille.nom}"/>
+        <td th:text="${supVille.latitude}"/>
+        <td th:text="${supVille.longitude}"/>
+        <td th:text="${supVille.pays}"/>
+    </tr>
+</table>
+
+<p style=color:#32CD32;>L'élément ci dessus à été supprimé</p>
+<a href ="/">retour</a>
 </body>
 </html>

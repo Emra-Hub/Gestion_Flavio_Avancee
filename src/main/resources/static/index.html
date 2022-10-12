@@ -1,10 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>ACCUEIL</title>
 </head>
 <body>
-$END$
+<h1>Bienvenue Flavio</h1>
+<h2><u>VILLES</u></h2>
+
+<p><h3><a href="villes/tous">1. Voir toutes les villes</a></h3></p>
+
+<p><h3>2. Ajouter une ville :</h3>
+<form action = "villes/create" method="get">
+    Nom : <input type = "text" name="nom"> <br>
+    Latitude : <input type = "text" name="latitude"> <br>
+    Longitude : <input type = "text" name="longitude"> <br>
+    Pays : <input type = "text" name="pays"> <br><br>
+    <input type="submit" name="ok" value="ok">
+</form>
+</p>
+
+<p><h3>3. Rechercher une ville :</h3>
+<form action = "villes/search" method="get">
+    ID : <input type = "text" name="idville"> <br><br>
+    <input type="submit" name="ok" value="ok">
+</form>
+</p>
+
+<p><h3>4. Modifier une ville :</h3>
+<form action = "villes/update" method="get">
+    ID de la ville : <input type = "text" name="idville"> <br>
+    New nom : <input type = "text" name="nom"> <br>
+    New latitude : <input type = "text" name="latitude"> <br>
+    New longitude : <input type = "text" name="longitude"> <br>
+    New pays : <input type = "text" name="pays"> <br><br>
+    <input type="submit" name="ok" value="ok">
+</form>
+</p>
+
+<p><h3>5. Supprimer une ville :</h3>
+<form action = "villes/delete" method="get">
+    ID : <input type = "text" name="idville"> <br><br>
+    <input type="submit" name="ok" value="ok">
+</form>
+</p>
 </body>
 </html>
