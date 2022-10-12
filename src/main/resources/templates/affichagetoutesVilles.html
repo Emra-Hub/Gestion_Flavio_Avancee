@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toutes les villes</title>
+</head>
+<body>
+<table border="1">
+    <th>NOM</th>
+    <th>LATITUDE</th>
+    <th>LONGITUDE</th>
+    <th>PAYS</th>
+    <tr th:each="uneVille : ${mesVilles}">
+        <td th:text="${uneVille.nom}"/>
+        <td th:text="${uneVille.latitude}"/>
+        <td th:text="${uneVille.longitude}"/>
+        <td th:text="${uneVille.pays}"/>
+    </tr>
+</table>
+<a href ="/">retour</a>
+</body>
+</html>
