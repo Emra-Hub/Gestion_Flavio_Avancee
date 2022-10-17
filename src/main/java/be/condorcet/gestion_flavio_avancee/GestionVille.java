@@ -24,7 +24,7 @@ public class GestionVille {
             model.put("mesVilles",lvi);
         } catch (Exception e) {
             System.out.println("----------Erreur lors de la recherche-------- " + e);
-            model.put("Error",e.getMessage());
+            model.put("error",e.getMessage());
             return "error";
         }
         return "affichagetoutesVilles";
@@ -41,7 +41,7 @@ public class GestionVille {
             model.put("nouvVille",vi);
         } catch (Exception e) {
             System.out.println("----------Erreur lors de la création-------- " + e);
-            model.put("Error",e.getMessage());
+            model.put("error",e.getMessage());
             return "error";
         }
         return "newVille";
@@ -56,9 +56,13 @@ public class GestionVille {
                 vi = ovi.get();
                 model.put("rechVille",vi);
             });
+
+            if (ovi.isEmpty()) {
+                throw new Exception("Cet ID n'existe pas.");
+            }
         } catch (Exception e) {
             System.out.println("----------Erreur lors de la recherche-------- " + e);
-            model.put("Error",e.getMessage());
+            model.put("error","Erreur : "+e.getMessage());
             return "error";
         }
         return "searchVille";
@@ -80,7 +84,7 @@ public class GestionVille {
             });
         } catch (Exception e) {
             System.out.println("----------Erreur lors de la modification-------- " + e);
-            model.put("Error",e.getMessage());
+            model.put("error",e.getMessage());
             return "error";
         }
         return "updateVille";
@@ -96,9 +100,13 @@ public class GestionVille {
                 villeRepository.deleteById(idville);
                 model.put("supVille",vi);
             });
+
+            if (ovi.isEmpty()) {
+                throw new Exception("Cet ID n'existe pas.");
+            }
         } catch (Exception e) {
             System.out.println("----------Erreur lors de la recherche-------- " + e);
-            model.put("Error",e.getMessage());
+            model.put("error","Erreur : "+e.getMessage());
             return "error";
         }
         return "deleteVille";
