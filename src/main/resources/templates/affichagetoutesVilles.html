@@ -7,11 +7,13 @@
 </head>
 <body>
 <table border="1">
+    <th>ID</th>
     <th>NOM</th>
     <th>LATITUDE</th>
     <th>LONGITUDE</th>
     <th>PAYS</th>
     <tr th:each="uneVille : ${mesVilles}">
+        <td th:text="${uneVille.idville}"/>
         <td th:text="${uneVille.nom}"/>
         <td th:text="${uneVille.latitude}"/>
         <td th:text="${uneVille.longitude}"/>

@@ -3,6 +3,8 @@ package be.condorcet.gestion_flavio_avancee.entities;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
+
 @Data @NoArgsConstructor @AllArgsConstructor @RequiredArgsConstructor
 @ToString
 @Entity
@@ -19,4 +21,12 @@ public class Ville {
     private Double longitude;
     @NonNull
     private String pays;
+
+    // @OneToMany(mappedBy = "ville" , fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "ville" , fetch = FetchType.LAZY,cascade=CascadeType.ALL, orphanRemoval=true)
+    //LAZY est la version par défaut
+    //cascadeType.ALL permet d'effacer en cascade si le client disparaît
+    // orphanRemoval=true permet d'ajouter et supprimer des commandes en DBà partir de la liste
+    @ToString.Exclude
+    private List<Coureur> coureurs;
 }
