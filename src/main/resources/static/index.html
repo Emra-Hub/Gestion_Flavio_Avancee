@@ -30,10 +30,10 @@
 <p><h3>4. Modifier une ville :</h3>
 <form action = "villes/update" method="get">
     ID de la ville : <input type = "text" name="idville"> <br>
-    New nom : <input type = "text" name="nom"> <br>
-    New latitude : <input type = "text" name="latitude"> <br>
-    New longitude : <input type = "text" name="longitude"> <br>
-    New pays : <input type = "text" name="pays"> <br><br>
+    New Nom : <input type = "text" name="nom"> <br>
+    New Latitude : <input type = "text" name="latitude"> <br>
+    New Longitude : <input type = "text" name="longitude"> <br>
+    New Pays : <input type = "text" name="pays"> <br><br>
     <input type="submit" name="ok" value="ok">
 </form>
 </p>
@@ -59,6 +59,45 @@
 <p><h3>2. Rechercher coureurs par ville :</h3>
 <form action = "coureurs/searchByVille" method="get">
     ID ville : <input type = "text" name="idville"> <br><br>
+    <input type="submit" name="ok" value="ok">
+</form>
+</p>
+
+<p><h3>3. Ajouter un coureur :</h3>
+<form action = "coureurs/create" method="get">
+    Matricule : <input type = "text" name="matricule"> <br>
+    Nom : <input type = "text" name="nom"> <br>
+    Prenom : <input type = "text" name="prenom"> <br>
+    Date de naissance : <input type = "text" name="datenaiss"> <br>
+    Nationalité : <input type = "text" name="nationalite"> <br>
+    ID ville : <input type = "text" name="ville"> <br><br>
+    <input type="submit" name="ok" value="ok">
+</form>
+</p>
+
+<p><h3>4. Rechercher un coureur :</h3>
+<form action = "coureurs/search" method="get">
+    ID : <input type = "text" name="idcoureur"> <br><br>
+    <input type="submit" name="ok" value="ok">
+</form>
+</p>
+
+<p><h3>5. Modifier un coureur :</h3>
+<form action = "coureurs/update" method="get">
+    ID du coureur : <input type = "text" name="idcoureur"> <br>
+    New Matricule : <input type = "text" name="matricule"> <br>
+    New Nom : <input type = "text" name="nom"> <br>
+    New Prenom : <input type = "text" name="prenom"> <br>
+    New Date de naissance : <input type = "text" name="datenaiss"> <br>
+    New Nationalité : <input type = "text" name="nationalite"> <br>
+    New ID ville : <input type = "text" name="ville"> <br><br>
+    <input type="submit" name="ok" value="ok">
+</form>
+</p>
+
+<p><h3>6. Supprimer un coureur :</h3>
+<form action = "coureurs/delete" method="get">
+    ID : <input type = "text" name="idcoureur"> <br><br>
     <input type="submit" name="ok" value="ok">
 </form>
 </p>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Infos Coureur</title>
+</head>
+<body>
+<table border="1">
+  <th>ID</th>
+  <th>MATRICULE</th>
+  <th>NOM</th>
+  <th>PRENOM</th>
+  <th>DATE NAISSANCE</th>
+  <th>NATIONALITE</th>
+  <th>ID VILLE</th>
+  <th>VILLE</th>
+  <tr>
+    <td th:text="${rechCoureur.idcoureur}"/>
+    <td th:text="${rechCoureur.matricule}"/>
+    <td th:text="${rechCoureur.nom}"/>
+    <td th:text="${rechCoureur.prenom}"/>
+    <td th:text="${rechCoureur.datenaiss}"/>
+    <td th:text="${rechCoureur.nationalite}"/>
+    <td th:text="${rechCoureur.ville.idville}"/>
+    <td th:text="${rechCoureur.ville.nom}"/>
+  </tr>
+</table>
+<a href ="/">retour</a>
+</body>
+</html>

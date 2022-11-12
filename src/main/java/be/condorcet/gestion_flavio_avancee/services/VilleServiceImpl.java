@@ -9,7 +9,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+//@Service
 @Transactional(rollbackOn = Exception.class)
 public class VilleServiceImpl implements InterfVilleService {
 

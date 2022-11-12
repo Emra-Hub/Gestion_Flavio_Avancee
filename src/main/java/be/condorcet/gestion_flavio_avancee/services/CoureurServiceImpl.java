@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
 
-@Service
+//@Service
 @Transactional(rollbackOn = Exception.class)
 public class CoureurServiceImpl implements InterfCoureurService {
 

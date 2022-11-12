@@ -2,6 +2,7 @@ package be.condorcet.gestion_flavio_avancee;
 
 import be.condorcet.gestion_flavio_avancee.entities.Ville;
 import be.condorcet.gestion_flavio_avancee.repositories.VilleRepository;
+import be.condorcet.gestion_flavio_avancee.services.InterfVilleService;
 import be.condorcet.gestion_flavio_avancee.services.VilleServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,8 +19,11 @@ public class GestionVille {
     /*@Autowired
     private VilleRepository villeRepository;*/
 
+    /*@Autowired
+    private VilleServiceImpl villeServiceImpl;*/
+
     @Autowired
-    private VilleServiceImpl villeServiceImpl;
+    private InterfVilleService villeServiceImpl;
 
     @RequestMapping("/tous")
     public String affAll(Map<String, Object> model) {
@@ -31,7 +35,7 @@ public class GestionVille {
             model.put("mesVilles",lvi);
         } catch (Exception e) {
             System.out.println("----------Erreur lors de la recherche-------- " + e);
-            model.put("error",e.getMessage());
+            model.put("error","Erreur : "+e.getMessage());
             return "error";
         }
         return "affichagetoutesVilles";
@@ -52,7 +56,7 @@ public class GestionVille {
             model.put("nouvVille",vi);
         } catch (Exception e) {
             System.out.println("----------Erreur lors de la création-------- " + e);
-            model.put("error",e.getMessage());
+            model.put("error","Erreur : "+e.getMessage());
             return "error";
         }
         return "newVille";
@@ -107,7 +111,7 @@ public class GestionVille {
 
         } catch (Exception e) {
             System.out.println("----------Erreur lors de la modification-------- " + e);
-            model.put("error",e.getMessage());
+            model.put("error","Erreur : "+e.getMessage());
             return "error";
         }
         return "updateVille";

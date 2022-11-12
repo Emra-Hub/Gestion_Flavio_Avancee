@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Suppression Coureur</title>
+</head>
+<body>
+<table border="1">
+  <th>ID</th>
+  <th>MATRICULE</th>
+  <th>NOM</th>
+  <th>PRENOM</th>
+  <th>DATE NAISSANCE</th>
+  <th>NATIONALITE</th>
+  <th>ID VILLE</th>
+  <th>VILLE</th>
+  <tr>
+    <td th:text="${supCoureur.idcoureur}"/>
+    <td th:text="${supCoureur.matricule}"/>
+    <td th:text="${supCoureur.nom}"/>
+    <td th:text="${supCoureur.prenom}"/>
+    <td th:text="${supCoureur.datenaiss}"/>
+    <td th:text="${supCoureur.nationalite}"/>
+    <td th:text="${supCoureur.ville.idville}"/>
+    <td th:text="${supCoureur.ville.nom}"/>
+  </tr>
+</table>
+
+<p style=color:#32CD32;>L'élément ci dessus à été supprimé</p>
+<a href ="/">retour</a>
+</body>
+</html>
