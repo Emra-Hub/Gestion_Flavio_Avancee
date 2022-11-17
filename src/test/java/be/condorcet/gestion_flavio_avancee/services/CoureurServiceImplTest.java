@@ -72,7 +72,7 @@ class CoureurServiceImplTest {
         boolean find = false;
 
         for (Coureur c : lco) {
-            if(c.getNationalite().contains("NationaliteTest")) {
+            if(c.getNationalite().equals("NationaliteTest")) {
                 find = true;
                 System.out.println("Nationalité : "+c.getNationalite());
             }

@@ -2,6 +2,8 @@ package be.condorcet.gestion_flavio_avancee.services;
 
 import be.condorcet.gestion_flavio_avancee.entities.Coureur;
 import be.condorcet.gestion_flavio_avancee.entities.Ville;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -59,5 +61,10 @@ public class CoureurServiceStub implements InterfCoureurService {
         Coureur co = (Coureur) readUnique(matricule);
         co.setIdcoureur(1);
         return (List<Coureur>) co;
+    }
+
+    @Override // --> Pour les webservices
+    public Page<Coureur> allp(Pageable pageable) throws Exception {
+        return null;
     }
 }

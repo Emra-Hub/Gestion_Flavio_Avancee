@@ -1,5 +1,6 @@
 package be.condorcet.gestion_flavio_avancee.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -22,8 +23,10 @@ public class Ville {
     @NonNull
     private String pays;
 
+    @JsonIgnore // --> Pour les webservices
     // @OneToMany(mappedBy = "ville" , fetch = FetchType.EAGER)
-    @OneToMany(mappedBy = "ville" , fetch = FetchType.LAZY,cascade=CascadeType.ALL, orphanRemoval=true)
+    //@OneToMany(mappedBy = "ville" , fetch = FetchType.LAZY,cascade=CascadeType.ALL, orphanRemoval=true)
+    @OneToMany(mappedBy = "ville") // --> Pour les webservices
     //LAZY est la version par défaut
     //cascadeType.ALL permet d'effacer en cascade si le client disparaît
     // orphanRemoval=true permet d'ajouter et supprimer des commandes en DBà partir de la liste

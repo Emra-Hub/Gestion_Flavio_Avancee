@@ -4,6 +4,8 @@ import be.condorcet.gestion_flavio_avancee.entities.Coureur;
 import be.condorcet.gestion_flavio_avancee.entities.Ville;
 import be.condorcet.gestion_flavio_avancee.repositories.CoureurRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -58,5 +60,10 @@ public class CoureurServiceImpl implements InterfCoureurService {
     @Override
     public List<Coureur> all() throws Exception {
         return coureurRepository.findAll();
+    }
+
+    @Override // --> Pour les websevices
+    public Page<Coureur> allp(Pageable pageable) throws Exception {
+        return coureurRepository.findAll(pageable);
     }
 }

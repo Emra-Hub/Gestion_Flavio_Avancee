@@ -3,6 +3,8 @@ package be.condorcet.gestion_flavio_avancee.services;
 import be.condorcet.gestion_flavio_avancee.entities.Coureur;
 import be.condorcet.gestion_flavio_avancee.entities.Ville;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -80,5 +82,10 @@ public class CoureurServiceMock implements InterfCoureurService {
     @Override
     public List<Coureur> readUnique(String matricule) {
         return (List<Coureur>) lco.stream().filter(co -> co.getMatricule().equals(matricule)).findFirst().get();
+    }
+
+    @Override // --> Pour les webservices
+    public Page<Coureur> allp(Pageable pageable) throws Exception {
+        return null;
     }
 }

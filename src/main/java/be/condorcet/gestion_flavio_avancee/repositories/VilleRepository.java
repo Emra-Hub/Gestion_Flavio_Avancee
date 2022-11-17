@@ -8,5 +8,5 @@ import java.util.List;
 public interface VilleRepository extends JpaRepository <Ville,Integer> {
     List<Ville> findVilleByNomLike(String nom); // --> Critère non unique
 
-    List<Ville> findVilleByLatitudeAndLongitude(Double latitude, Double longitude); // --> Critère unique
+    Ville findVilleByLatitudeAndLongitude(Double latitude, Double longitude); // --> Critère unique. Utilisé aussi pour les webservices
 }

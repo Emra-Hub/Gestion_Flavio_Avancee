@@ -2,6 +2,8 @@ package be.condorcet.gestion_flavio_avancee.services;
 
 import be.condorcet.gestion_flavio_avancee.entities.Coureur;
 import be.condorcet.gestion_flavio_avancee.entities.Ville;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -47,10 +49,15 @@ public class VilleServiceStub implements InterfVilleService {
         return lvi;
     }
 
-    @Override
-    public List<Ville> readUnique(Double latitude, Double longitude) {
-        Ville vi = (Ville) readUnique(latitude, longitude);
+    @Override // --> Critère unique. Utilisé aussi pour les webservices
+    public Ville readUnique(Double latitude, Double longitude) {
+        Ville vi = readUnique(latitude, longitude);
         vi.setIdville(1);
-        return (List<Ville>) vi;
+        return vi;
+    }
+
+    @Override // --> Pour les webservices
+    public Page<Ville> allp(Pageable pageable) throws Exception {
+        return null;
     }
 }

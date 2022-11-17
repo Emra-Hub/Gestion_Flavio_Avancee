@@ -7,5 +7,5 @@ import java.util.List;
 public interface InterfVilleService extends InterfService<Ville> {
     public List<Ville> read(String nom); // --> Critère non unique
 
-    public List<Ville> readUnique(Double latitude, Double longitude); // --> Critère unique
+    public Ville readUnique(Double latitude, Double longitude); // --> Critère unique. Utilisé aussi pour les webservices
 }

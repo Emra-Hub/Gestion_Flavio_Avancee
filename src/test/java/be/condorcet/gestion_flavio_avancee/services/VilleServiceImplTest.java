@@ -52,7 +52,7 @@ class VilleServiceImplTest {
         boolean find = false;
 
         for (Ville v : lvi) {
-            if(v.getNom().contains("NomTest")) {
+            if(v.getNom().startsWith("NomTest")) {
                 find = true;
                 System.out.println("Ville : "+v.getNom());
             }
@@ -63,7 +63,7 @@ class VilleServiceImplTest {
 
     @Test
     void readUnique() { // --> Critère unique
-        List<Ville> lvi = villeServiceImpl.readUnique(16.50,18.90);
+        List<Ville> lvi = (List<Ville>) villeServiceImpl.readUnique(16.50,18.90);
         boolean find = false;
 
         for (Ville v : lvi) {
