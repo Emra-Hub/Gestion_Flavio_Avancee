@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@CrossOrigin(origins = "*", allowedHeaders = "*",exposedHeaders = "*")  // --> Accepter que les webservices fonctionnent à partir d'autres sites dans l'en-tête.
+@CrossOrigin(origins = "*", allowedHeaders = "*",exposedHeaders = "*")  // --> Accepter que les webservices fonctionnent à partir d'autres sites dans l'en-tête.
 @RestController
 @RequestMapping("/coureurs")
 public class RestCoureur {
