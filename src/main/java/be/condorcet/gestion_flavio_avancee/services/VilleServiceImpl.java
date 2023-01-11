@@ -28,6 +28,12 @@ public class VilleServiceImpl implements InterfVilleService {
         return villeRepository.findVilleByLatitudeAndLongitude(latitude, longitude);
     }
 
+    //Question 2
+    @Override
+    public List<Ville> readPays(String pays) {
+        return villeRepository.findVilleByPaysLike(pays+"%");
+    }
+
     @Override
     public Ville create(Ville ville) throws Exception {
         villeRepository.save(ville);

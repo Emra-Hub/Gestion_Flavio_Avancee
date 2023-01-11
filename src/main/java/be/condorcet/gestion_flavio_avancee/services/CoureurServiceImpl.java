@@ -34,6 +34,13 @@ public class CoureurServiceImpl implements InterfCoureurService {
         return coureurRepository.findCoureurByMatricule(matricule);
     }
 
+    // Question 1
+    @Override
+    public List<Coureur> readNom(String nom) {
+        List<Coureur> lco = coureurRepository.findCoureurByNomLike(nom+"%");
+        return lco;
+    }
+
     @Override
     public Coureur create(Coureur coureur) throws Exception {
         coureurRepository.save(coureur);

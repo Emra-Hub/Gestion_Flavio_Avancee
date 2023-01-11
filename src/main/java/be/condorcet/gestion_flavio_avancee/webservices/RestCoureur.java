@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*",exposedHeaders = "*")  // --> Accepter que les webservices fonctionnent à partir d'autres sites dans l'en-tête.
 @RestController
@@ -87,4 +88,13 @@ public class RestCoureur {
         System.out.println("erreur : "+ex.getMessage());
         return ResponseEntity.notFound().header("error",ex.getMessage()).build();
     }
+
+    // Question 1
+    @RequestMapping(value = "/nom={nom}", method = RequestMethod.GET)
+    public ResponseEntity<List<Coureur>> getCoureurNom(@PathVariable(value = "nom") String nom)  throws Exception{
+        System.out.println("Recherche des coureurs commencant par : " +nom);
+        List<Coureur> lco = coureurServiceImpl.readNom(nom);
+        return new ResponseEntity<>(lco, HttpStatus.OK);
+    }
+
 }

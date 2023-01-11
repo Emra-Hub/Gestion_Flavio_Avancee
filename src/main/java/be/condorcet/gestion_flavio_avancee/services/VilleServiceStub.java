@@ -56,6 +56,12 @@ public class VilleServiceStub implements InterfVilleService {
         return vi;
     }
 
+    //Question 2
+    @Override
+    public List<Ville> readPays(String pays) {
+        return null;
+    }
+
     @Override // --> Pour les webservices
     public Page<Ville> allp(Pageable pageable) throws Exception {
         return null;

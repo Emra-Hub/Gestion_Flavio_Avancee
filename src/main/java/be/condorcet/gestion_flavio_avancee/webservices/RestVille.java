@@ -90,4 +90,12 @@ public class RestVille {
         System.out.println("erreur : "+ex.getMessage());
         return ResponseEntity.notFound().header("error",ex.getMessage()).build();
     }
+
+    //Question 2
+    @RequestMapping(value = "/pays={pays}", method = RequestMethod.GET)
+    public ResponseEntity<List<Ville>> listVillesPays(@PathVariable(value="pays") String pays) throws Exception{
+        System.out.println("recherche de "+pays);
+        List<Ville> villes = villeServiceImpl.readPays(pays);
+        return new ResponseEntity<>(villes, HttpStatus.OK);
+    }
 }

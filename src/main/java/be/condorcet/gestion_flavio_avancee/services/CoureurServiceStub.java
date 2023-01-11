@@ -63,6 +63,12 @@ public class CoureurServiceStub implements InterfCoureurService {
         return (List<Coureur>) co;
     }
 
+    // Question 1
+    @Override
+    public List<Coureur> readNom(String nom) {
+        return null;
+    }
+
     @Override // --> Pour les webservices
     public Page<Coureur> allp(Pageable pageable) throws Exception {
         return null;

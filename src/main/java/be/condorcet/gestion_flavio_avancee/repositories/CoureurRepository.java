@@ -13,4 +13,8 @@ public interface CoureurRepository extends JpaRepository<Coureur,Integer>
     public List<Coureur> findCoureurByNationalite(String nationalite); // --> Critère non unique
 
     public List<Coureur> findCoureurByMatricule(String matricule); // --> Critère unique
+
+    // Question 1
+    public List<Coureur> findCoureurByNomLike(String nom);
+
 }

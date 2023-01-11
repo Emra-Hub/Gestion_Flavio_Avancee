@@ -75,6 +75,12 @@ public class VilleServiceMock implements InterfVilleService {
         return lvi.stream().filter(vi -> vi.getLatitude().equals(latitude) && vi.getLongitude().equals(longitude)).findFirst().get();
     }
 
+    //Question 2
+    @Override
+    public List<Ville> readPays(String pays) {
+        return null;
+    }
+
     @Override // --> Pour les webservices
     public Page<Ville> allp(Pageable pageable) throws Exception {
         return null;

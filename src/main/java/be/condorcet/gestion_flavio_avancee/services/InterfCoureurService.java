@@ -11,4 +11,7 @@ public interface InterfCoureurService extends InterfService<Coureur> {
     public List<Coureur> read(String nationalite); // --> Critère non unique
 
     public List<Coureur> readUnique(String matricule); // --> Critère unique. Utilisé aussi pour les webservices
+
+    // Question 1
+    public List<Coureur> readNom(String nom);
 }

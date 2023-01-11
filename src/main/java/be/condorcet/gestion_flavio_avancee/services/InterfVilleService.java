@@ -8,4 +8,7 @@ public interface InterfVilleService extends InterfService<Ville> {
     public List<Ville> read(String nom); // --> Critère non unique
 
     public Ville readUnique(Double latitude, Double longitude); // --> Critère unique. Utilisé aussi pour les webservices
+
+    //Question 2
+    public List<Ville> readPays(String pays);
 }

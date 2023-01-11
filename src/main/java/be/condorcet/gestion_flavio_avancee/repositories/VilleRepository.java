@@ -9,4 +9,7 @@ public interface VilleRepository extends JpaRepository <Ville,Integer> {
     List<Ville> findVilleByNomLike(String nom); // --> Critère non unique
 
     Ville findVilleByLatitudeAndLongitude(Double latitude, Double longitude); // --> Critère unique. Utilisé aussi pour les webservices
+
+    //Question 2
+    List<Ville> findVilleByPaysLike(String pays);
 }

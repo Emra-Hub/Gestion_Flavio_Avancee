@@ -84,6 +84,12 @@ public class CoureurServiceMock implements InterfCoureurService {
         return (List<Coureur>) lco.stream().filter(co -> co.getMatricule().equals(matricule)).findFirst().get();
     }
 
+    // Question 1
+    @Override
+    public List<Coureur> readNom(String nom) {
+        return null;
+    }
+
     @Override // --> Pour les webservices
     public Page<Coureur> allp(Pageable pageable) throws Exception {
         return null;
